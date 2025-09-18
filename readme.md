@@ -1,8 +1,10 @@
 # A basic conversational LLM app using websocket connection
 
-This is a basic demonstration of using a websocket to connect a langgraph application running on a server to a client via a websocket, enabling continuous back and forth communication. A basic python test client is provided, but this can be replaced by any equivalent program (in any language) that implements the websocket protocol. This method can be used to embed LLM driven applications in third party platforms.
+This is a basic demonstration of using a websocket to connect a langgraph application running on a server to a client via a websocket, enabling continuous back and forth communication. The advantage of a websocket is that it supports a continuous connection during human-in-the-loop workflows.
 
-The application demonstrated here can be extended in many directions including:
+A basic python test client is provided, but this can be replaced by any equivalent program (in any language) that implements the websocket protocol. This method can be used to embed LLM driven applications in third party platforms.
+
+The application demonstrated here provides a simple chat functionality only, but can be extended in many directions including:
 - Connection to MCP servers and other external data sources such as web search or data bases
 - Teams of agents co-ordinated by the state graph
 - Retrieval of datasets from vector stores
