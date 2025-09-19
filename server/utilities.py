@@ -2,7 +2,7 @@ import json
 from langchain_core.messages import AIMessage
 
 ## Function to process client messages
-def process_message(message: dict) -> tuple[str]:
+def extract_human_message(message: dict) -> tuple[str]:
         
     ## Unpack client supplied data
     input_data = json.loads(message)
@@ -14,7 +14,7 @@ def process_message(message: dict) -> tuple[str]:
     return content, thread_config
 
 ## Function to process AI messages
-def extract_human_message(result: dict) -> dict:
+def extract_AI_message(result: dict) -> dict:
         
     ai_message = result['messages'][-1]
 
