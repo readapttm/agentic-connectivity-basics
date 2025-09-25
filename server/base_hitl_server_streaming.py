@@ -40,6 +40,17 @@ class State(TypedDict):
 ## Define AI chat node
 def AI_node(state: State) -> Command[Literal["human_node", END]]:
 
+    """
+    This function defines the AI node which runs LLM inference
+
+    Args:
+        state (TypedDict): dictionary which stores the conversation history.
+
+    Returns:
+        state: updated state with new a new AI response
+
+    """
+
     ## Unpack message list
     messages = state['messages']
 
@@ -79,6 +90,17 @@ def AI_node(state: State) -> Command[Literal["human_node", END]]:
 
 ## Simple human node
 def human_node(state: State) -> Command[Literal["AI_node", END]]:
+
+    """
+    This function defines the human node which breaks the control flow and requests input from the user
+
+    Args:
+        state (TypedDict): dictionary which stores the conversation history.
+
+    Returns:
+        state: updated state with new a new human response
+
+    """
 
     # Get value via interrupt
     value = interrupt( 

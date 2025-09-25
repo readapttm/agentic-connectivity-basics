@@ -3,6 +3,17 @@ from langchain_core.messages import AIMessage
 
 ## Function to process client messages
 def extract_human_message(message: dict) -> tuple[str]:
+
+    """
+    This function extracts the content of client (human) messages
+
+    Args:
+        message (dict): message from the client
+
+    Returns:
+        content, thread_config (tuple): the client message content and thread_id
+
+    """
         
     ## Unpack client supplied data
     input_data = json.loads(message)
@@ -15,6 +26,17 @@ def extract_human_message(message: dict) -> tuple[str]:
 
 ## Function to process AI messages
 def extract_AI_message(result: dict) -> dict:
+
+    """
+    This function extracts the content of the most recent AI message
+
+    Args:
+        result (dict): conversation history after the AI agent's turn
+
+    Returns:
+        response (dict): AI message content in serialisable from
+
+    """
         
     ai_message = result['messages'][-1]
 
