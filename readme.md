@@ -44,3 +44,5 @@ In a second terminal:
 ```
 python client/stream_client.py
 ```
+
+NB. All code in this repository is provided for educational purposes only, with absolutely no warranty explicit, implied, or otherwise.
